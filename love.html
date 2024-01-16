@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courtship Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #video-container {
+            display: none;
+        }
+        #noButton {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Can I court you?</h1>
+
+    <button id="yesButton" onclick="playVideo()">Yes</button>
+    <button id="noButton" onclick="toggleButtons()">No</button>
+
+    <div id="video-container">
+        <!-- Replace 'https://www.youtube.com/watch?v=KN3IemyqJJw' with your actual video link -->
+        <iframe width="560" height="315" src="c:\Users\Welcome2022\Downloads\videoplayback.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function playVideo() {
+            document.getElementById('video-container').style.display = 'block';
+            hideButtons();
+        }
+
+        function toggleButtons() {
+            var noButton = document.getElementById('noButton');
+            var yesButton = document.getElementById('yesButton');
+
+            if (noButton.innerHTML === 'No') {
+                noButton.innerHTML = 'Yes';
+                noButton.style.color = 'green';
+                yesButton.style.display = 'none';
+            } else {
+                playVideo();
+            }
+        }
+
+        function hideButtons() {
+            document.getElementById('yesButton').style.display = 'none';
+            document.getElementById('noButton').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
