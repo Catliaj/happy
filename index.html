@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,34 @@
             text-align: center;
             margin: 50px;
         }
+
+        body {
+            background-image: url(images.jpg);
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
         #video-container {
             display: none;
         }
-        #noButton {
-            color: red;
+
+        audio {
+            display: none;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            background-color: aliceblue;
+            background-size: auto;
         }
     </style>
 </head>
+
 <body>
 
     <h1>Can I court you?</h1>
@@ -26,14 +47,53 @@
     <button id="noButton" onclick="toggleButtons()">No</button>
 
     <div id="video-container">
-        <!-- Replace 'https://www.youtube.com/watch?v=KN3IemyqJJw' with your actual video link -->
-        <iframe width="560" height="315" src="videoplayback.mp4" frameborder="0" allowfullscreen></iframe>
+        <!-- Replace 'https://www.youtube.com/watch?v=KN3IemyqJJw' with your video URL -->
+        <iframe width="560" height="315" src="bebe.mp4" frameborder="0" allowfullscreen></iframe>
+        <h1> Yehey Pumayag na siya manligaw ako</h1>
+        <p> Magandang araw sayo! Sana ay mabasa mo ito ng may ngiti sa iyong mga labi. Hindi ko alam kung paano magsimula,<br>
+            ngunit nais ko lang iparating sayo ang nararamdaman ko mula sa kaibuturan ng aking puso.<br>
+    
+            Una sa lahat, gusto ko lang sabihin kung gaano ako kasaya at nagpapasalamat dahil sa pagkakataon na makilala ka <br>
+            sa ating RP account. Mula sa mga simpleng kwentuhan hanggang sa paglipat sa RA account, nararamdaman ko ang <br>
+            paglago ng ating samahan. Salamat sa pagpayag na maging bahagi ng buhay mo at maging daan ako sa pagiging parte <br>
+            ng iyong mundo. <br>
+    
+            Masaya ako sa bawat araw na tayong magkasama, kahit sa virtual na mundo lamang. Sa bawat tawanan, kwentuhan, at <br>
+            mga pag-uusap, nadarama ko ang init ng pagkakaibigan na unti-unti naging espesyal. <br>
+    
+            Isang malaking hakbang ang pagsasalita ko tungkol sa nararamdaman ko para sayo. Salamat sa pagtanggap sa akin <br>
+            bilang isang nagmamahal na kaibigan, at mas higit pa sa pagiging handa mong payagan akong manligaw sayo. Alam <br>
+            kong hindi ito madali, ngunit handa akong harapin ang mga hamon at pagsubok na pwedeng dumating sa ating <br>
+            pag-ibig. <br>
+    
+            Nais kong iparating sayo na handa akong magsikap, magsakripisyo, at maging matatag para sa ating dalawa. Hindi <br>
+            ko hahayaang mawala ang kasiyahan at pagmamahal na nadarama ko kapag kasama kita. Alam kong may mga darating na <br>
+            pagsubok, ngunit naniniwala ako na kaya natin itong lampasan ng magkasama. <br>
+    
+            Higit sa lahat, mahalaga sa akin ang iyong kaligayahan at kaginhawaan. Sana'y maging inspirasyon ako sa iyo, <br>
+            tulad ng ikaw sa akin. Pangako ko na mamahalin kita ng buo, na maging tapat at matapat sa ating relasyon. <br>
+    
+            Salamat sa pagbigay ng pagkakataon na maging bahagi ng iyong buhay. Asahan mo ang aking suporta at pagmamahal sa <br>
+            lahat ng oras. Handa akong gawin ang lahat para sa ating pag-ibig hanggang sa huli. <br>
+    
+            Mahal kita ng sobra, at inaasahan ko ang mga masasayang pagkakataon na maghihintay sa ating hinaharap. <br>
+    
+            Iniibig kita ng lubos,</p>
     </div>
 
+    <audio controls autoplay loop>
+        <!-- Replace 'your_music.mp3' with your music file -->
+
+        <source src="bg.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
     <script>
         function playVideo() {
             document.getElementById('video-container').style.display = 'block';
-            hideButtons();
+            document.getElementById('yesButton').style.display = 'none';
+            document.getElementById('noButton').style.display = 'none';
+            document.querySelector('audio').play();
         }
 
         function toggleButtons() {
@@ -42,18 +102,13 @@
 
             if (noButton.innerHTML === 'No') {
                 noButton.innerHTML = 'Yes';
-                noButton.style.color = 'green';
                 yesButton.style.display = 'none';
             } else {
                 playVideo();
             }
         }
-
-        function hideButtons() {
-            document.getElementById('yesButton').style.display = 'none';
-            document.getElementById('noButton').style.display = 'none';
-        }
     </script>
 
 </body>
+
 </html>
